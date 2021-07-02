@@ -241,10 +241,10 @@ export default function behavesLikeSqlFormatter(language) {
   });
 
   it('keeps short parenthesized list with nested parenthesis on single line', () => {
-    const result = format('SELECT (a + b * (c - NOW()));');
+    const result = format('SELECT (a + b * (c-NOW()));');
     expect(result).toBe(dedent/* sql */ `
       SELECT
-        (a + b * (c - NOW()));
+        (a + b * (c-NOW()));
     `);
   });
 
@@ -384,7 +384,7 @@ export default function behavesLikeSqlFormatter(language) {
     expect(format('foo < bar')).toBe('foo < bar');
     expect(format('foo > bar')).toBe('foo > bar');
     expect(format('foo + bar')).toBe('foo + bar');
-    expect(format('foo - bar')).toBe('foo - bar');
+    expect(format('foo-bar')).toBe('foo-bar');
     expect(format('foo * bar')).toBe('foo * bar');
     expect(format('foo / bar')).toBe('foo / bar');
     expect(format('foo % bar')).toBe('foo % bar');

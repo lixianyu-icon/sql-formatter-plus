@@ -24,6 +24,7 @@ export const format = (query, cfg = {}) => {
     case 'pl/sql':
       return new PlSqlFormatter(cfg).format(query);
     case 'sql':
+    case 'flink':
     case undefined:
       return new StandardSqlFormatter(cfg).format(query);
     default:

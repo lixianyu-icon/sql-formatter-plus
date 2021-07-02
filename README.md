@@ -1,37 +1,19 @@
-# SQL Formatter Plus
+# @tencent/flink-sql-format
 
-A fork of [SQL Formatter](https://github.com/zeroturnaround/sql-formatter) with some extra bug fixes and features.
-
-Fixes:
-
-- Fixed formatting issue with unicode characters
-- Fixed comment formatting for non-unix line endings
-- Fixed null reference on input tokenization
-- Fixed indentation of multiple statements
-
-New Features:
-
-- Convert keywords to uppercase with the `uppercase` config option
-- Configurable number of line breaks between queries with the `linesBetweenQueries` config option
-
-**SQL Formatter** is a JavaScript library for pretty-printing SQL queries.
-It started as a port of a [PHP Library][], but has since considerably diverged.
-It supports [Standard SQL][], [Couchbase N1QL][], [IBM DB2][] and [Oracle PL/SQL][] dialects.
-
-[Try the demo.](https://kufii.github.io/sql-formatter-plus//)
+A fork of [SQL Formatter](https://github.com/zeroturnaround/sql-formatter) with some extra bug fixes and features. 
 
 ## Install
 
 Get the latest version from NPM:
 
 ```shell
-npm install sql-formatter
+npm install @tencent/flink-sql-format
 ```
 
 ## Usage
 
 ```javascript
-import sqlFormatter from 'sql-formatter-plus';
+import sqlFormatter from '@tencent/flink-sql-format';
 
 console.log(sqlFormatter.format('SELECT * FROM table1'));
 ```
@@ -54,14 +36,7 @@ sqlFormatter.format('SELECT *', {
   uppercase: true, // Defaults to false
   linesBetweenQueries: 2 // Defaults to 1
 });
-```
-
-Currently just four SQL dialects are supported:
-
-- **sql** - [Standard SQL][]
-- **n1ql** - [Couchbase N1QL][]
-- **db2** - [IBM DB2][]
-- **pl/sql** - [Oracle PL/SQL][]
+``` 
 
 ### Placeholders replacement
 
